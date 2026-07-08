@@ -1,0 +1,3 @@
+SELECT DISTINCT workspace_name
+FROM serverless_stable_cvpomp_catalog.heineken_genie.v_genie_spaces
+ORDER BY workspace_name

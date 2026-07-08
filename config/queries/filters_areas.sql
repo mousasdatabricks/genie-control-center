@@ -1,0 +1,3 @@
+SELECT DISTINCT area
+FROM serverless_stable_cvpomp_catalog.heineken_genie.v_genie_spaces
+ORDER BY area

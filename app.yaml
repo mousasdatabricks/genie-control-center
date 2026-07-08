@@ -1,0 +1,11 @@
+# Build (typegen + client/server bundles) and start on the Apps compute.
+# The conditional install is a no-op when the platform already installed deps.
+command:
+  - sh
+  - -c
+  - 'if [ ! -d node_modules ]; then npm ci || npm install; fi; npm run build && npm start'
+env:
+  - name: DATABRICKS_WAREHOUSE_ID
+    valueFrom: sql-warehouse
+  - name: LAKEBASE_ENDPOINT
+    valueFrom: postgres
