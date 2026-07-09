@@ -1,6 +1,7 @@
 # Deploy Genie Control Center — client workspace
 
-> **Instalação detalhada com Databricks Asset Bundles (DAB):** veja **[INSTALL.md](INSTALL.md)** (guia principal, em português).
+> **Instalação pela interface visual (sem CLI):** veja **[INSTALL-UI.md](INSTALL-UI.md)** (passo a passo para iniciantes, em português).  
+> **Instalação com Databricks Asset Bundles (DAB):** veja **[INSTALL.md](INSTALL.md)** (guia técnico, em português).
 
 Este documento resume o runbook em inglês. Todos os passos de deploy usam o **Asset Bundle** definido em [`databricks.yml`](../databricks.yml).
 

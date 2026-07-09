@@ -2,6 +2,8 @@
 
 Guia passo a passo para instalar o **Genie Control Center** no workspace Databricks do cliente usando **Databricks Asset Bundles (DAB)**.
 
+> **Prefere a interface visual (sem terminal)?** Veja **[INSTALL-UI.md](INSTALL-UI.md)** — deploy pelo menu Databricks Apps conectando o repositório GitHub.
+
 O bundle declara o app, o SQL Warehouse e o Lakebase em [`databricks.yml`](../databricks.yml). O deploy sincroniza o código-fonte, provisiona permissões nos recursos vinculados e inicia o app via [`app.yaml`](../app.yaml).
 
 ---
@@ -503,6 +505,7 @@ Para POC sem system tables, use `sql/demo_01_data.sql` + `sql/demo_02_views.sql`
 
 | Arquivo | Descrição |
 |---------|-----------|
+| [`INSTALL-UI.md`](INSTALL-UI.md) | Instalação pela interface Databricks Apps (sem CLI) |
 | [`databricks.yml`](../databricks.yml) | Definição do Asset Bundle |
 | [`app.yaml`](../app.yaml) | Runtime do Databricks App |
 | [`sql/views_prod.sql`](../sql/views_prod.sql) | Views de produção |

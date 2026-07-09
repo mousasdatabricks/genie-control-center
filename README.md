@@ -53,9 +53,12 @@ Default analytics prefix in queries: **`main.genie_cc`**. Change with `scripts/c
 
 ## Instalação (cliente)
 
-**Guia completo com Databricks Asset Bundles:** **[docs/INSTALL.md](docs/INSTALL.md)**
+| Perfil | Guia |
+|--------|------|
+| **Interface visual (sem terminal)** | **[docs/INSTALL-UI.md](docs/INSTALL-UI.md)** — deploy pelo Databricks Apps + GitHub |
+| **CLI + Asset Bundle (time técnico)** | **[docs/INSTALL.md](docs/INSTALL.md)** |
 
-Resumo:
+Resumo (CLI):
 
 ```bash
 git clone https://github.com/mousasdatabricks/genie-control-center.git
