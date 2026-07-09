@@ -5,6 +5,10 @@
 
 Este documento resume o runbook em inglês. Todos os passos de deploy usam o **Asset Bundle** definido em [`databricks.yml`](../databricks.yml).
 
+![Genie Control Center — Overview dashboard](assets/genie-control-center-overview.png)
+
+*Deployed app: Overview module with KPIs, usage trends, and cost breakdown (demo data).*
+
 ## Prerequisites
 
 | Requirement | Notes |

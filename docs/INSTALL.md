@@ -6,6 +6,10 @@ Guia passo a passo para instalar o **Genie Control Center** no workspace Databri
 
 O bundle declara o app, o SQL Warehouse e o Lakebase em [`databricks.yml`](../databricks.yml). O deploy sincroniza o código-fonte, provisiona permissões nos recursos vinculados e inicia o app via [`app.yaml`](../app.yaml).
 
+![Genie Control Center — painel Visão Geral](assets/genie-control-center-overview.png)
+
+*Resultado esperado após instalação: módulo Visão Geral com KPIs, séries temporais e custo por área.*
+
 ---
 
 ## Visão geral do que o bundle faz

@@ -4,6 +4,10 @@ Databricks App (**AppKit**) for **governing AI/BI Genie** across workspaces: usa
 
 Built with React + TypeScript (UI), Express/AppKit (server), **Unity Catalog views** over system tables (analytics), and **Lakebase (Postgres)** for app state (goals, thresholds, annotations, budgets).
 
+![Genie Control Center — Overview dashboard with KPIs, usage trends, cost by area, and adoption charts](docs/assets/genie-control-center-overview.png)
+
+*Overview module: KPIs, time series, cost by area, and top spaces (demo data).*
+
 ## Modules
 
 | Module | What it shows |

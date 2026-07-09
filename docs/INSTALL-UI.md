@@ -9,6 +9,10 @@ Você **não precisa** instalar Git, Node.js ou Databricks CLI no seu computador
 
 > **Tem um time técnico com terminal?** Eles podem usar [INSTALL.md](INSTALL.md) (Databricks Asset Bundles). Este guia é o caminho **visual**.
 
+![Genie Control Center — painel Visão Geral com KPIs, gráficos de uso e custo por área](assets/genie-control-center-overview.png)
+
+*Exemplo da tela **Visão Geral** após o deploy (dados de demonstração).*
+
 ---
 
 ## Índice
