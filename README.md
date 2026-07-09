@@ -34,17 +34,22 @@ React UI (8 modules)
 Lakebase schema genie_cc  →  Admin API (goals, thresholds, annotations, budgets)
 ```
 
-**Portability:** the app always reads five abstraction views. In production you create them over your system tables — **application code does not change**.
+**Portability:** the app reads abstraction views over system tables. In production you create them once — **application code does not change**.
 
 | View | Content |
 |------|---------|
-| `v_genie_usage_daily` | Daily usage per space/user |
-| `v_genie_costs_daily` | Daily compute cost per space/SKU |
+| `v_genie_usage_daily` | Daily usage per space/user + product surface |
+| `v_genie_costs_daily` | Compute cost per space (proportional allocation) |
+| `v_genie_billing_sku_daily` | Real `sku_name` from billing + cost category |
+| `v_genie_llm_daily` | LLM DBUs/cost per user (+ space when inferable) |
+| `v_genie_user_cost_daily` | Compute + LLM per user/day |
+| `v_genie_product_usage_daily` | Aggregated Spaces vs Code usage |
 | `v_genie_users` | Users, area, first/last access |
 | `v_genie_spaces` | Inventory + derived status |
-| `v_genie_llm_daily` | LLM DBUs per user/day (Paygo) |
 
 Default analytics prefix in queries: **`main.genie_cc`**. Change with `scripts/configure-analytics-schema.sh`.
+
+**Billing monitoring guide:** [docs/BILLING-MONITORING.md](docs/BILLING-MONITORING.md)
 
 ## Instalação (cliente)
 
@@ -67,7 +72,8 @@ databricks bundle deploy -t default -p your-profile
 databricks bundle run app -t default -p your-profile
 ```
 
-Runbook complementar (inglês): [docs/DEPLOY-CLIENT.md](docs/DEPLOY-CLIENT.md).
+Runbook complementar (inglês): [docs/DEPLOY-CLIENT.md](docs/DEPLOY-CLIENT.md).  
+Billing e monitoramento: [docs/BILLING-MONITORING.md](docs/BILLING-MONITORING.md).
 
 ## Demo data (optional)
 
