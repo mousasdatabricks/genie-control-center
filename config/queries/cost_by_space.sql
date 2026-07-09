@@ -1,6 +1,6 @@
 WITH u AS (
   SELECT space_name, SUM(num_questions) AS perguntas, COUNT(DISTINCT user_email) AS usuarios
-  FROM serverless_stable_cvpomp_catalog.heineken_genie.v_genie_usage_daily
+  FROM main.genie_cc.v_genie_usage_daily
   WHERE usage_date BETWEEN CAST(:p_start AS DATE) AND CAST(:p_end AS DATE)
     AND (:p_ws = '' OR workspace_name = :p_ws)
     AND (:p_area = '' OR area = :p_area)
@@ -8,7 +8,7 @@ WITH u AS (
 ),
 c AS (
   SELECT space_name, area, workspace_name, SUM(cost_usd) AS custo
-  FROM serverless_stable_cvpomp_catalog.heineken_genie.v_genie_costs_daily
+  FROM main.genie_cc.v_genie_costs_daily
   WHERE usage_date BETWEEN CAST(:p_start AS DATE) AND CAST(:p_end AS DATE)
     AND (:p_ws = '' OR workspace_name = :p_ws)
     AND (:p_area = '' OR area = :p_area)

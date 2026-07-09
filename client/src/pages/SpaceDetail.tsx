@@ -6,7 +6,7 @@ import { ArrowLeft, Users, MessageSquare, DollarSign, Star, Trash2 } from 'lucid
 import { useFilters } from '../lib/filters';
 import { useT } from '../lib/i18n';
 import { firstRow, asRows } from '../lib/rows';
-import { HEINEKEN_COLORS } from '../lib/theme';
+import { CHART_COLORS } from '../lib/theme';
 import { toNum, fmtInt, fmtUsd, fmtDate, fmtPct } from '../lib/formatters';
 import { KpiCard } from '../components/KpiCard';
 import { StatusBadge } from '../components/StatusBadge';
@@ -132,7 +132,7 @@ export function SpaceDetail() {
             parameters={params}
             xKey="usage_date"
             yKey={['perguntas', 'usuarios']}
-            colors={HEINEKEN_COLORS}
+            colors={CHART_COLORS}
             height={280}
             smooth
             showLegend

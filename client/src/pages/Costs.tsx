@@ -3,7 +3,7 @@ import { DollarSign, Coins, UserCog, TrendingUp } from 'lucide-react';
 import { useFilterParams } from '../lib/filters';
 import { useT } from '../lib/i18n';
 import { asRows, firstRow } from '../lib/rows';
-import { HEINEKEN_COLORS } from '../lib/theme';
+import { CHART_COLORS } from '../lib/theme';
 import { toNum, fmtInt, fmtUsd } from '../lib/formatters';
 import { KpiCard } from '../components/KpiCard';
 import { StatusBadge } from '../components/StatusBadge';
@@ -61,15 +61,15 @@ export function Costs() {
       </div>
 
       <ChartCard title={t('co.daily')} description={t('co.dailyDesc')}>
-        <AreaChart queryKey="cost_timeseries" parameters={params} xKey="usage_date" yKey="custo" colors={[HEINEKEN_COLORS[3]]} height={300} smooth />
+        <AreaChart queryKey="cost_timeseries" parameters={params} xKey="usage_date" yKey="custo" colors={[CHART_COLORS[3]]} height={300} smooth />
       </ChartCard>
 
       <div className="grid gap-4 lg:grid-cols-2">
         <ChartCard title={t('co.bySku')} description={t('co.bySkuDesc')}>
-          <DonutChart queryKey="cost_by_sku" parameters={params} xKey="sku" yKey="custo" colors={HEINEKEN_COLORS} height={300} />
+          <DonutChart queryKey="cost_by_sku" parameters={params} xKey="sku" yKey="custo" colors={CHART_COLORS} height={300} />
         </ChartCard>
         <ChartCard title={t('co.byArea')}>
-          <BarChart queryKey="cost_by_area" parameters={params} xKey="area" yKey="custo" colors={HEINEKEN_COLORS} height={300} />
+          <BarChart queryKey="cost_by_area" parameters={params} xKey="area" yKey="custo" colors={CHART_COLORS} height={300} />
         </ChartCard>
       </div>
 

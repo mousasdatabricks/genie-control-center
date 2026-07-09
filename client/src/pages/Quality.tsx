@@ -3,7 +3,7 @@ import { ThumbsUp, ThumbsDown, Star, MessageSquare } from 'lucide-react';
 import { useFilterParams } from '../lib/filters';
 import { useT } from '../lib/i18n';
 import { asRows, firstRow } from '../lib/rows';
-import { HEINEKEN_COLORS } from '../lib/theme';
+import { CHART_COLORS } from '../lib/theme';
 import { toNum, fmtInt, fmtPct } from '../lib/formatters';
 import { KpiCard } from '../components/KpiCard';
 import { DataGrid } from '../components/DataGrid';
@@ -58,7 +58,7 @@ export function Quality() {
       </div>
 
       <ChartCard title={t('ql.evolution')} description={t('ql.evolutionDesc')}>
-        <LineChart queryKey="quality_timeseries" parameters={params} xKey="usage_date" yKey="taxa_sucesso" colors={[HEINEKEN_COLORS[0]]} height={300} smooth />
+        <LineChart queryKey="quality_timeseries" parameters={params} xKey="usage_date" yKey="taxa_sucesso" colors={[CHART_COLORS[0]]} height={300} smooth />
       </ChartCard>
 
       {worst.length > 0 && (

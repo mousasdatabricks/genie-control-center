@@ -4,7 +4,7 @@ import { Users, Cpu, Gift, DollarSign, TrendingUp, Save, RotateCcw, Info } from 
 import { useFilterParams } from '../lib/filters';
 import { useT } from '../lib/i18n';
 import { asRows, firstRow } from '../lib/rows';
-import { HEINEKEN_COLORS } from '../lib/theme';
+import { CHART_COLORS } from '../lib/theme';
 import { toNum, fmtInt, fmtUsd, fmtDec } from '../lib/formatters';
 import { KpiCard } from '../components/KpiCard';
 import { PageHeader, ChartCard } from '../components/ui-bits';
@@ -114,7 +114,7 @@ export function Billing() {
           parameters={params}
           xKey="faixa"
           yKey="usuarios"
-          colors={HEINEKEN_COLORS}
+          colors={CHART_COLORS}
           height={280}
         />
       </ChartCard>
@@ -178,7 +178,7 @@ export function Billing() {
                           <span className="h-1.5 w-14 overflow-hidden rounded-full bg-muted">
                             <span
                               className="block h-full rounded-full"
-                              style={{ width: `${Math.min(100, pctFree)}%`, backgroundColor: pctFree >= 100 ? 'var(--warning)' : HEINEKEN_COLORS[0] }}
+                              style={{ width: `${Math.min(100, pctFree)}%`, backgroundColor: pctFree >= 100 ? 'var(--warning)' : CHART_COLORS[0] }}
                             />
                           </span>
                           <span className="text-xs text-muted-foreground">{fmtInt(pctFree)}%</span>

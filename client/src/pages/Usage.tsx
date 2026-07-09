@@ -3,7 +3,7 @@ import { MessageSquare, AlertCircle, Percent, Timer } from 'lucide-react';
 import { useFilterParams } from '../lib/filters';
 import { useT } from '../lib/i18n';
 import { asRows, firstRow } from '../lib/rows';
-import { HEINEKEN_COLORS } from '../lib/theme';
+import { CHART_COLORS } from '../lib/theme';
 import { toNum, fmtInt, fmtDec, fmtPct } from '../lib/formatters';
 import { KpiCard } from '../components/KpiCard';
 import { DataGrid } from '../components/DataGrid';
@@ -51,7 +51,7 @@ export function Usage() {
       </div>
 
       <ChartCard title={t('us.questionsBySpace')} description={t('us.questionsBySpaceDesc')}>
-        <BarChart queryKey="usage_by_space" parameters={params} xKey="space_name" yKey="perguntas" colors={HEINEKEN_COLORS} height={320} />
+        <BarChart queryKey="usage_by_space" parameters={params} xKey="space_name" yKey="perguntas" colors={CHART_COLORS} height={320} />
       </ChartCard>
 
       <ChartCard title={t('us.detailBySpace')}>

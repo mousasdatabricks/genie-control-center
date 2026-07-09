@@ -14,7 +14,7 @@ SELECT
   pos_30d,
   neg_30d,
   status
-FROM serverless_stable_cvpomp_catalog.heineken_genie.v_genie_spaces
+FROM main.genie_cc.v_genie_spaces
 WHERE (:p_ws = '' OR workspace_name = :p_ws)
   AND (:p_area = '' OR area = :p_area)
 ORDER BY questions_30d DESC

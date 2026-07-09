@@ -16,9 +16,9 @@ const DICT: Record<string, Entry> = {
   // Brand / shell
   'brand.subtitle': { pt: 'Governança de Uso, Adoção & Custos', en: 'Usage, Adoption & Cost Governance', es: 'Gobierno de Uso, Adopción y Costos' },
   'footer': {
-    pt: 'Heineken · Genie Control Center — dados de demonstração. Em produção, aponte as views v_genie_* para suas system tables.',
-    en: 'Heineken · Genie Control Center — demo data. In production, point the v_genie_* views to your system tables.',
-    es: 'Heineken · Genie Control Center — datos de demostración. En producción, apunte las vistas v_genie_* a sus system tables.',
+    pt: 'Genie Control Center — em produção, aponte as views v_genie_* para suas system tables.',
+    en: 'Genie Control Center — in production, point the v_genie_* views to your system tables.',
+    es: 'Genie Control Center — en producción, apunte las vistas v_genie_* a sus system tables.',
   },
   'lang.label': { pt: 'Idioma', en: 'Language', es: 'Idioma' },
   'nav.collapse': { pt: 'Recolher', en: 'Collapse', es: 'Colapsar' },

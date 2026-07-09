@@ -1,7 +1,7 @@
 @import "@databricks/appkit-ui/styles.css";
 
-/* ── Heineken Brasil brand theme ─────────────────────────────────────────────
-   Heineken green (#00841f) as primary, red star (#e4001b) as destructive/accent.
+/* ── Genie Control Center theme ──────────────────────────────────────────────
+   Customize primary/accent in client/src/lib/brand-config.ts for white-label.
    Tokens override AppKit UI defaults. */
 
 :root {

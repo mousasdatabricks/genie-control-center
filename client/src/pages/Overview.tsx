@@ -12,7 +12,7 @@ import {
 import { useFilterParams } from '../lib/filters';
 import { useT } from '../lib/i18n';
 import { asRows, firstRow } from '../lib/rows';
-import { HEINEKEN_COLORS } from '../lib/theme';
+import { CHART_COLORS } from '../lib/theme';
 import { toNum, fmtInt, fmtUsd, fmtPct, fmtDec } from '../lib/formatters';
 import { KpiCard } from '../components/KpiCard';
 import { StatusBadge } from '../components/StatusBadge';
@@ -83,23 +83,23 @@ export function Overview() {
             parameters={params}
             xKey="usage_date"
             yKey={['questions', 'active_users']}
-            colors={HEINEKEN_COLORS}
+            colors={CHART_COLORS}
             height={300}
             smooth
             showLegend
           />
         </ChartCard>
         <ChartCard title={t('ov.costByArea')} description={t('ov.costByAreaDesc')}>
-          <DonutChart queryKey="cost_by_area" parameters={params} xKey="area" yKey="custo" colors={HEINEKEN_COLORS} height={300} />
+          <DonutChart queryKey="cost_by_area" parameters={params} xKey="area" yKey="custo" colors={CHART_COLORS} height={300} />
         </ChartCard>
       </div>
 
       <div className="grid gap-4 lg:grid-cols-2">
         <ChartCard title={t('ov.adoptionByArea')} description={t('ov.adoptionByAreaDesc')}>
-          <BarChart queryKey="adoption_by_area" parameters={params} xKey="area" yKey="usuarios" colors={HEINEKEN_COLORS} height={300} />
+          <BarChart queryKey="adoption_by_area" parameters={params} xKey="area" yKey="usuarios" colors={CHART_COLORS} height={300} />
         </ChartCard>
         <ChartCard title={t('ov.questionsBySpace')} description={t('ov.questionsBySpaceDesc')}>
-          <BarChart queryKey="usage_by_space" parameters={params} xKey="space_name" yKey="perguntas" colors={HEINEKEN_COLORS} height={300} />
+          <BarChart queryKey="usage_by_space" parameters={params} xKey="space_name" yKey="perguntas" colors={CHART_COLORS} height={300} />
         </ChartCard>
       </div>
 

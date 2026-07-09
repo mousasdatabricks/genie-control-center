@@ -4,7 +4,7 @@ import { Users, UserPlus, Layers, Gauge } from 'lucide-react';
 import { useFilterParams } from '../lib/filters';
 import { useI18n, DOW_LABELS } from '../lib/i18n';
 import { asRows, firstRow } from '../lib/rows';
-import { HEINEKEN_COLORS } from '../lib/theme';
+import { CHART_COLORS } from '../lib/theme';
 import { toNum, fmtInt } from '../lib/formatters';
 import { KpiCard } from '../components/KpiCard';
 import { PageHeader, ChartCard } from '../components/ui-bits';
@@ -71,7 +71,7 @@ export function Adoption() {
             parameters={params}
             xKey="area"
             yKey={['usuarios', 'perguntas']}
-            colors={HEINEKEN_COLORS}
+            colors={CHART_COLORS}
             height={300}
             showLegend
           />
@@ -82,7 +82,7 @@ export function Adoption() {
             parameters={params}
             xKey="semana"
             yKey="novos_usuarios"
-            colors={[HEINEKEN_COLORS[0]]}
+            colors={[CHART_COLORS[0]]}
             height={300}
             smooth
           />
@@ -116,7 +116,7 @@ export function Adoption() {
                           <div
                             className="flex h-9 w-12 items-center justify-center rounded text-[11px] font-medium"
                             style={{
-                              backgroundColor: `color-mix(in srgb, ${HEINEKEN_COLORS[0]} ${Math.round(
+                              backgroundColor: `color-mix(in srgb, ${CHART_COLORS[0]} ${Math.round(
                                 intensity * 100,
                               )}%, transparent)`,
                               color: intensity > 0.5 ? 'white' : 'var(--muted-foreground)',
@@ -158,7 +158,7 @@ export function Adoption() {
                     className="h-full rounded-full"
                     style={{
                       width: `${goal > 0 ? pct : 100}%`,
-                      backgroundColor: pct >= 100 ? HEINEKEN_COLORS[0] : HEINEKEN_COLORS[1],
+                      backgroundColor: pct >= 100 ? CHART_COLORS[0] : CHART_COLORS[1],
                     }}
                   />
                 </div>

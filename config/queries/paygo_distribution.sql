@@ -1,6 +1,6 @@
 WITH m AS (
   SELECT user_email, SUM(llm_dbus) AS dbus
-  FROM serverless_stable_cvpomp_catalog.heineken_genie.v_genie_llm_daily
+  FROM main.genie_cc.v_genie_llm_daily
   WHERE usage_date >= current_date() - INTERVAL 30 DAYS
     AND (:p_ws = '' OR workspace_name = :p_ws)
     AND (:p_area = '' OR area = :p_area)

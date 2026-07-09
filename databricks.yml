@@ -1,25 +1,28 @@
 bundle:
-  name: heineken-genie-cc
+  name: genie-control-center
 
 variables:
   sql_warehouse_id:
-    description: SQL Warehouse ID
+    description: SQL Warehouse ID for analytics queries
   postgres_branch:
-    description: Full Lakebase Postgres branch resource name. Obtain by running `databricks postgres list-branches projects/{project-id}`, select the desired item from the output array and use its .name value.
+    description: >-
+      Full Lakebase Postgres branch resource name.
+      Run `databricks postgres list-branches projects/{project-id}` and use the .name value.
   postgres_database:
-    description: Full Lakebase Postgres database resource name. Obtain by running `databricks postgres list-databases {branch-name}`, select the desired item from the output array and use its .name value. Requires the branch resource name.
+    description: >-
+      Full Lakebase Postgres database resource name.
+      Run `databricks postgres list-databases {branch-name}` and use the .name value.
 
 resources:
   apps:
     app:
-      name: "heineken-genie-cc"
-      description: "Genie Control Center - governanca de uso, adocao e custos do AI/BI Genie"
+      name: genie-control-center
+      description: "Genie Control Center — usage, adoption, quality and cost governance for AI/BI Genie"
       source_code_path: ./
-      # Uncomment to enable on behalf of user API scopes. Available scopes: sql, dashboards.genie, files.files, serving.serving-endpoints
+      # Uncomment to enable on behalf of user API scopes.
       # user_api_scopes:
       #   - sql
 
-      # The resources which this app has access to.
       resources:
         - name: sql-warehouse
           sql_warehouse:
@@ -35,9 +38,9 @@ targets:
   default:
     default: true
     workspace:
-      host: https://fevm-serverless-stable-cvpomp.cloud.databricks.com
+      host: https://YOUR-WORKSPACE.cloud.databricks.com
 
     variables:
-      sql_warehouse_id: 8e61ddfbf3bfab26
-      postgres_branch: projects/heineken-genie-db/branches/production
-      postgres_database: projects/heineken-genie-db/branches/production/databases/databricks-postgres
+      sql_warehouse_id: YOUR_SQL_WAREHOUSE_ID
+      postgres_branch: projects/YOUR-LAKEBASE-PROJECT/branches/production
+      postgres_database: projects/YOUR-LAKEBASE-PROJECT/branches/production/databases/databricks-postgres
