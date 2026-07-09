@@ -1,6 +1,7 @@
-.PHONY: install build deploy clean configure-schema
+.PHONY: install build deploy validate clean configure-schema
 
 PROFILE ?= your-profile
+TARGET ?= default
 
 install:
 	npm install
@@ -8,9 +9,18 @@ install:
 build:
 	npm run build
 
-deploy:
-	databricks bundle deploy -t default -p $(PROFILE)
-	databricks bundle run app -t default -p $(PROFILE)
+validate:
+	databricks bundle validate -t $(TARGET) -p $(PROFILE)
+
+deploy: validate
+	databricks bundle deploy -t $(TARGET) -p $(PROFILE)
+	databricks bundle run app -t $(TARGET) -p $(PROFILE)
+
+deploy-only:
+	databricks bundle deploy -t $(TARGET) -p $(PROFILE)
+
+run:
+	databricks bundle run app -t $(TARGET) -p $(PROFILE)
 
 clean:
 	npm run clean

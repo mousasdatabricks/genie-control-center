@@ -37,8 +37,10 @@ resources:
 targets:
   default:
     default: true
+    mode: production
     workspace:
       host: https://YOUR-WORKSPACE.cloud.databricks.com
+      # profile: YOUR-CLI-PROFILE   # optional — or pass -p on every bundle command
 
     variables:
       sql_warehouse_id: YOUR_SQL_WAREHOUSE_ID

@@ -46,25 +46,28 @@ Lakebase schema genie_cc  →  Admin API (goals, thresholds, annotations, budget
 
 Default analytics prefix in queries: **`main.genie_cc`**. Change with `scripts/configure-analytics-schema.sh`.
 
-## Quick start (client deploy)
+## Instalação (cliente)
 
-See **[docs/DEPLOY-CLIENT.md](docs/DEPLOY-CLIENT.md)** for the full runbook.
+**Guia completo com Databricks Asset Bundles:** **[docs/INSTALL.md](docs/INSTALL.md)**
+
+Resumo:
 
 ```bash
-# 1. Customize branding (optional)
-#    Edit client/src/lib/brand-config.ts
+git clone https://github.com/mousasdatabricks/genie-control-center.git
+cd genie-control-center
 
-# 2. Point queries to your UC catalog.schema (if not main.genie_cc)
-./scripts/configure-analytics-schema.sh your_catalog.your_schema
+# 1. (Opcional) branding → client/src/lib/brand-config.ts
+# 2. (Opcional) UC prefix → ./scripts/configure-analytics-schema.sh catalog.schema
+# 3. Criar views UC → sql/views_prod.sql (no workspace)
+# 4. Configurar databricks.yml (host, warehouse, Lakebase)
 
-# 3. Configure databricks.yml (workspace, warehouse, Lakebase)
-# 4. Create UC views — sql/views_prod.sql
-
-# 5. Deploy
 databricks auth login --host https://YOUR-WORKSPACE.cloud.databricks.com --profile your-profile
+databricks bundle validate -t default -p your-profile
 databricks bundle deploy -t default -p your-profile
 databricks bundle run app -t default -p your-profile
 ```
+
+Runbook complementar (inglês): [docs/DEPLOY-CLIENT.md](docs/DEPLOY-CLIENT.md).
 
 ## Demo data (optional)
 
